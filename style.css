@@ -2,6 +2,10 @@
 
 :root{
     --primary-blue:#047aed;
+    --secondary-color:#1c3fa8;
+    --dark-color:#002240;
+    --light-color:#f4f4f4;
+
 }
 ::-webkit-scrollbar{
     display: none;
@@ -129,35 +133,69 @@ img{
     margin: 4rem;
 }
 .py-1{
-    margin: 1rem 0px;
+    padding: 1rem 0px;
 }
 .py-2{
-    margin: 1.5rem 0px;
+    padding: 1.5rem 0px;
 }
 .py-3{
-    margin: 2rem 0px;
+    padding: 2rem 0px;
 }
 .py-4{
-    margin: 3rem 0px;
+    padding: 3rem 0px;
 }
 .py-5{
-    margin: 4rem 0px;
+    padding: 4rem 0px;
 }
 .p-1{
-    margin: 1rem;
+    padding: 1rem;
 }
 .p-2{
-    margin: 1.5rem;
+    padding: 1.5rem;
 }
 .p-3{
-    margin: 2rem;
+    padding: 2rem;
 }
 .p-4{
-    margin: 3rem;
+    padding: 3rem;
 }
 .p-5{
-    margin: 4rem;
+    padding: 4rem;
 }
+.bg-primary,.btn-primary{
+background-color: var(--primary-blue);
+color: #fff;
+}
+.bg-secondary,.btn-secondary{
+background-color: var(--dark-color);
+color: #fff;
+}
+.bg-light,.btn-light{
+background-color: var(--light-color);
+color: #333;
+}
+.bg-primary a,.btn-primary a,
+.bg-secondary a,.btn-secondary a,
+.bg-light a,.btn-light a{
+color: #fff;
+}
+
+.lead{
+    font-size: 20px;
+}
+.sm{
+    font-size: 1rem;
+}
+.md{
+    font-size: 2rem;
+}
+.lg{
+    font-size: 3rem;
+}
+.xl{
+    font-size: 4rem;
+}
+
 
 
 /* Showcase */
@@ -169,9 +207,12 @@ img{
 }
 .showcase h1{
     font-size: 40px;
+    color: #fff;
 }
 .showcase p{
     margin: 20px 0;
+    color: #fff;
+
 }
 
 .showcase .grid {
@@ -246,4 +287,69 @@ img{
 .cli .grid > *:first-child{
     grid-column: 1/span 2;
     grid-row: 1/span 2;
+}
+/* cloud */
+.cloud .grid{
+    grid-template-columns: repeat(3, 1fr);
+}
+/* languages */
+.languages .card{
+
+    text-align: center;
+    margin: 18px 10px 40px;
+
+}
+.languages .flex{
+    flex-wrap: wrap;
+}
+.languages .card h4{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.languages .card:hover{
+    transform: translateY(-15px);
+
+    transition: transform 0.2s ease-in-out;
+}
+.footer .social a{
+    margin: 0px 10px;
+}
+/* media queries */
+
+/* Tablets and under */
+@media(max-width:768px){
+    
+    .grid,
+    .showcase .grid,
+    .stats .grid,
+    .cli .grid,
+    .cloud .grid{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+    .showcase{
+        height: auto;
+    }
+    .showcase-form{
+        justify-self: center;
+        margin: auto;
+    }
+
+
+
+}
+
+
+/* mobiles */
+@media(max-width:500px){
+    .navbar{
+        height: 110px;
+    }
+    .navbar .flex{
+        flex-direction: column;
+    }
+    .navbar ul{
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
 }
